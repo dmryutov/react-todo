@@ -1,0 +1,140 @@
+@import "./variables";
+@import "./mixins";
+
+#list-container {
+	width: 75%;
+	border-left: 1px solid $grey_color;
+
+	@media (max-width: $sm-size) {
+		width: 100%;
+		border-left: none;
+		border-bottom: 1px solid $grey_color;
+	}
+
+	li {
+		position: relative;
+		font-size: 22px;
+		border-bottom: 1px solid $grey_color;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.toggle {
+			text-align: center;
+			width: 40px;
+			/* auto, since non-WebKit browsers doesn't support input styling */
+			height: 40px;
+			top: 0;
+			bottom: 0;
+			margin: auto 0;
+			border: none;
+			/* Mobile Safari */
+			-webkit-appearance: none;
+					appearance: none;
+			&:after {
+				content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+			}
+			&:checked:after {
+				content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="rgba(42, 174, 245, .6)" stroke-width="3"/><path fill="rgba(42, 174, 245, .6)" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+			}
+		}
+		label {
+			white-space: pre;
+			word-break: break-word;
+			padding: 15px;
+			margin-left: 5px;
+			display: block;
+			line-height: 1.2;
+			transition: color 0.4s;
+		}
+		.title {
+			white-space: normal;
+			flex-basis: 100%;
+		}
+		.estimate {
+			width: 100px;
+			font-size: 14px;
+			margin-left: 0;
+			text-align: right;
+		}
+		.project-color {
+			margin-right: 60px;
+		}
+		&.completed label {
+			color: #c9c9c9;
+			text-decoration: line-through;
+		}
+		&.failed label {
+			color: red;
+		}
+
+		@include btn-delete-size(40px);
+		@include btn-delete-hover;
+	}
+}
+
+.list-header {
+	position: relative;
+	height: 65px;
+
+	@media (max-width: $sm-size) {
+		height: 48px;
+	}
+}
+
+.task-list {
+	padding: 0;
+	margin: 0;
+	overflow-y: scroll;
+}
+
+.list-footer {
+	color: #777;
+	padding: 10px 15px;
+	height: 40px;
+	text-align: center;
+
+	button {
+		color: $blue_color;
+	}
+}
+
+#add-task {
+	#task-title {
+		@include add-input-size(73%);
+
+		@media (max-width: $sm-size) {
+			width: 70% !important;
+			padding: 12px 8px 12px 40px;
+		}
+	}
+	#task-date {
+		@include add-input-size(27%);
+		padding: 16px;
+		border-left: 1px solid $grey_color;
+		text-align: center;
+
+		@media (max-width: $sm-size) {
+			width: 30% !important;
+			padding: 12px 8px;
+		}
+	}
+	
+	@include btn-add-size(46px, 7px, 0px);
+	.btn-add {
+		@media (max-width: $sm-size) {
+			width: 35px;
+			height: 44px;
+			top: -7px;
+		}	
+	}
+}
+
+
+@media (max-width: $md-size) {
+	#list-container {
+		li, input {
+			font-size: 18px;
+		}
+	}
+}

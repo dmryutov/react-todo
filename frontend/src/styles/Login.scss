@@ -1,0 +1,44 @@
+@import "./variables";
+
+.box-login {
+	min-width: auto;
+	max-width: 400px;
+	flex-direction: column;
+
+	form {
+		width: 100%;
+	}
+
+	p.error {
+		color: red;
+		text-align: center;
+		font-size: 18px;
+		margin-bottom: 0;
+		padding: 0 10px;
+	}
+
+	.add-input {
+		width: 100%;
+		padding: 16px;
+	}
+
+	.login-button {
+		text-align: center;
+		vertical-align: middle;
+		border: 1px solid transparent;
+		padding: 8px 16px;
+		font-size: 16px;
+		font-weight: 500;
+		cursor: pointer;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+			-ms-user-select: none;
+				user-select: none;
+		-webkit-transition: all .2s ease-in-out;
+			 -o-transition: all .2s ease-in-out;
+				transition: all .2s ease-in-out;
+		color: #fff;
+		background-color: $blue_color;
+		width: 100%;
+	}
+}

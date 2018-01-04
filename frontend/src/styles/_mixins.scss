@@ -1,0 +1,36 @@
+@mixin btn-add-size($size, $top, $left:auto, $right:auto) {
+	.btn-add {
+		width: $size;
+		height: $size;
+		top: $top;
+		left: $left;
+		right: $right;
+		&:before {
+			font-size: $size / 1.2;
+		}
+	}
+}
+
+@mixin btn-delete-size($size) {
+	.btn-delete {
+		width: $size;
+		height: $size;
+		font-size: $size * 3 / 4;
+	}
+}
+@mixin btn-delete-hover {
+	&:hover .btn-delete {
+		display: block;
+	}
+	.btn-delete {
+		@media (max-width: 768px) {
+			display: block;
+		}
+	}
+}
+
+@mixin add-input-size($width) {
+	&.add-input {
+		width: $width;
+	}
+}

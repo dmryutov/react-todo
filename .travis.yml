@@ -1,0 +1,24 @@
+sudo: false
+
+language: python
+
+python:
+  - "3.6"
+
+node_js: "5.6"
+
+cache:
+  directories:
+    - $HOME/.cache/pip
+    - $HOME/virtualenv/python3.6.3/lib/python3.6/site-packages
+    - frontend/node_modules
+
+before_install:
+  - pip install -U pip
+  - npm i -g npm
+  - chmod +x ./backend/run_tests.sh
+  - chmod +x ./frontend/run_tests.sh
+
+script:
+  - "./backend/run_tests.sh"
+  - "./frontend/run_tests.sh"

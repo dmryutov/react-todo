@@ -1,0 +1,7 @@
+sudo npm install -g create-react-app
+npm install webpack-bundle-tracker --save-dev
+
+npm i --save react-router react-router-dom redux react-redux history react-router-redux axios
+npm i --save-dev redux-logger redux-thunk sass-loader node-sass classnames enzyme enzyme-adapter-react-16 redux-mock-store
+
+npm i —-save pikaday react-color

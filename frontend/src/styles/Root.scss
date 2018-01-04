@@ -1,0 +1,171 @@
+@import "./variables";
+@import "./mixins";
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	margin: 30px auto;
+	width: 100%;
+	font-size: 80px;
+	font-weight: 200;
+	text-align: center;
+	color: rgba(42, 174, 245, 1);
+	-webkit-text-rendering: optimizeLegibility;
+	   -moz-text-rendering: optimizeLegibility;
+			text-rendering: optimizeLegibility;
+
+	@media (max-width: $md-size) {
+		font-size: 60px;
+		margin: 20px auto;
+	}
+	@media (max-width: $sm-size) {
+		font-size: 40px;
+		margin: 10px auto;
+	}
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	color: $blue_color;
+	text-decoration: none;
+}
+
+button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	font-size: 100%;
+	vertical-align: baseline;
+	font-family: inherit;
+	font-weight: inherit;
+	color: inherit;
+	cursor: pointer;
+	-webkit-appearance: none;
+			appearance: none;
+	-webkit-font-smoothing: antialiased;
+	   -moz-font-smoothing: antialiased;
+			font-smoothing: antialiased;
+}
+
+button, input[type="checkbox"] {
+	outline: none;
+}
+
+footer {
+	/*position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;*/
+	font-size: 16px;
+	text-align: center;
+	padding: 15px;
+
+	a, button {
+		color: #4d4d4d;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.clearfix {
+	&:before {
+		content: '';
+		display: table;
+	}
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+	*zoom: 1;
+}
+
+#app {
+	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #4d4d4d;
+	-webkit-font-smoothing: antialiased;
+	   -moz-font-smoothing: antialiased;
+			font-smoothing: antialiased;
+	font-weight: 300;
+}
+
+.box {
+	min-width: 430px;
+	max-width: 750px;
+	margin: auto;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+	display: flex;
+	align-items: stretch;
+}
+
+.box-main {
+	@media (max-width: $sm-size) {
+		flex-direction: column-reverse;
+		margin: 0px 10px;
+		min-width: auto;
+	}
+}
+
+
+.btn-add {
+	position: absolute;
+	text-align: center;
+	border: none;
+	/* Mobile Safari */
+	&:before {
+		content: '+';
+		color: #e6e6e6;
+	}
+}
+
+.btn-delete {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 10px;
+	bottom: 0;
+	margin: auto 0;
+	color: rgba(42, 174, 245, 0.5);
+	transition: color 0.2s ease-out;
+	font-family: monospace;
+
+	&:hover {
+		color: rgba(42, 174, 245, 1);
+	}
+	&:after {
+		content: '×';
+	}
+}
+
+.add-input {
+	padding: 16px 16px 16px 60px;
+	border: none;
+	background: rgba(0, 0, 0, 0.003);
+	box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+	font-size: 22px;
+	font-family: inherit;
+	font-weight: inherit;
+	line-height: 1.4em;
+	outline: none;
+	color: inherit;
+}
+
+.error {
+	text-align: center;
+}

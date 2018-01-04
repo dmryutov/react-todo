@@ -1,0 +1,102 @@
+@import "./variables";
+@import "./mixins";
+
+#project-container {
+	display: flex;
+	flex-direction: column;
+	padding: 10px 0;
+	width: 25%;
+
+	@media (max-width: $sm-size) {
+		width: 100%;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		position: relative;
+		a {
+			display: block;
+			padding: 0 10px;
+			padding-right: 35px;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 30px;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			&.active {
+				color: #fff;
+				background: rgba(42, 174, 245, 1);
+			}
+			&.active + .btn-delete {
+				color: white;
+			}
+		}
+
+		@include btn-delete-size(30px);
+		@include btn-delete-hover;
+		
+	}
+	hr {
+		$color: $grey_color;
+		color: $color;
+		background-color: $color;
+		border: 0;
+		height: 1px;
+	}
+
+	&:hover {
+		#add-project {
+			display: flex;
+		}
+	}
+}
+
+#project-list {
+	margin-bottom: 15px;
+}
+
+.project-color {
+	min-width: 10px;
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	margin-right: 10px;
+	border-radius: 50%;
+
+	$colors: (#cccccc, #95ef63, #ff8581, #ffc471, #f9ec75, #a8c8e4,
+			  #d2b8a3, #e2a8e4, #fb886e, #ffcc00, #74e8d3, #3bd5fb);
+	$counter: 1;
+	@each $color in $colors {
+		&-#{$counter} {
+			background: $color;
+		}
+		$counter: $counter + 1;
+	}
+}
+
+#add-project {
+	margin-top: auto;
+	position: relative;
+	display: none;
+
+	@media (max-width: $lg-size) {
+		display: flex;
+	}
+
+	@include btn-add-size(30px, 0px, auto, 0px);
+
+	.add-input {
+		font-size: 16px;
+		width: 67%;
+		padding: 5px;
+	}
+
+	.colorPicker {
+		margin: 8px 5px 0px 11px;
+	}
+}
