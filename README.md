@@ -1,6 +1,7 @@
 # React-Todo
 
 [![Build Status](https://travis-ci.org/dmryutov/react-todo.svg?branch=master)](https://travis-ci.org/dmryutov/react-todo)
+[![Github Releases](https://img.shields.io/github/release/dmryutov/react-todo.svg)](https://github.com/dmryutov/react-todo/releases)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 React-Todo is a simple React/Django task manager with authentication
